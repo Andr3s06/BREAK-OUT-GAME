@@ -18,7 +18,7 @@ let ballCurrentPosition = ballStart;
 ballSpeed = setInterval(moveBall, 12);
 
 //create block
-class Block {
+class Brick {
   constructor(xAxis, yAxis) {
     this.bottomLeft = [xAxis, yAxis];
     this.bottomRight = [xAxis + blockWidth, yAxis];
@@ -29,51 +29,51 @@ class Block {
 
 //all my blocks
 const blocks = [
-  new Block(10, 270),
-  new Block(120, 270),
-  new Block(230, 270),
-  new Block(340, 270),
-  new Block(450, 270),
-  new Block(10, 240),
-  new Block(120, 240),
-  new Block(230, 240),
-  new Block(340, 240),
-  new Block(450, 240),
-  new Block(10, 210),
-  new Block(120, 210),
-  new Block(230, 210),
-  new Block(340, 210),
-  new Block(450, 210),
-  new Block(10, 300),
-  new Block(120, 300),
-  new Block(230, 300),
-  new Block(340, 300),
-  new Block(450, 300),
-  new Block(10, 330),
-  new Block(120, 330),
-  new Block(230, 330),
-  new Block(340, 330),
-  new Block(450, 330),
-  new Block(10, 360),
-  new Block(120, 360),
-  new Block(230, 360),
-  new Block(340, 360),
-  new Block(450, 360),
-  new Block(10, 390),
-  new Block(120, 390),
-  new Block(230, 390),
-  new Block(340, 390),
-  new Block(450, 390),
-  new Block(10, 420),
-  new Block(120, 420),
-  new Block(230, 420),
-  new Block(340, 420),
-  new Block(450, 420),
-  new Block(10, 450),
-  new Block(120, 450),
-  new Block(230, 450),
-  new Block(340, 450),
-  new Block(450, 450),
+  new Brick(10, 270),
+  new Brick(120, 270),
+  new Brick(230, 270),
+  new Brick(340, 270),
+  new Brick(450, 270),
+  new Brick(10, 240),
+  new Brick(120, 240),
+  new Brick(230, 240),
+  new Brick(340, 240),
+  new Brick(450, 240),
+  new Brick(10, 210),
+  new Brick(120, 210),
+  new Brick(230, 210),
+  new Brick(340, 210),
+  new Brick(450, 210),
+  new Brick(10, 300),
+  new Brick(120, 300),
+  new Brick(230, 300),
+  new Brick(340, 300),
+  new Brick(450, 300),
+  new Brick(10, 330),
+  new Brick(120, 330),
+  new Brick(230, 330),
+  new Brick(340, 330),
+  new Brick(450, 330),
+  new Brick(10, 360),
+  new Brick(120, 360),
+  new Brick(230, 360),
+  new Brick(340, 360),
+  new Brick(450, 360),
+  new Brick(10, 390),
+  new Brick(120, 390),
+  new Brick(230, 390),
+  new Brick(340, 390),
+  new Brick(450, 390),
+  new Brick(10, 420),
+  new Brick(120, 420),
+  new Brick(230, 420),
+  new Brick(340, 420),
+  new Brick(450, 420),
+  new Brick(10, 450),
+  new Brick(120, 450),
+  new Brick(230, 450),
+  new Brick(340, 450),
+  new Brick(450, 450),
 ];
 
 // draw all my blocks
@@ -88,16 +88,17 @@ function addBlocks() {
 }
 addBlocks();
 
-//add user
-const user = document.createElement("div");
-user.classList.add("user");
+//USER IMG
+var img = new Image();
+img.src = "userTwo.svg";
+grid.appendChild(img);
+img.classList.add("userTwo");
 drawUser();
-grid.appendChild(user);
 
 //draw the user
 function drawUser() {
-  user.style.left = userCurrentPosition[0] + "px";
-  user.style.bottom = userCurrentPosition[1] + "px";
+  img.style.left = userCurrentPosition[0] + "px";
+  img.style.bottom = userCurrentPosition[1] + "px";
 }
 
 //draw the ball
@@ -212,12 +213,3 @@ function changeDirection() {
   }
 }
 
-// function addBlock() {
-//     const block = document.createElement("div");
-//     block.classList.add("block");
-//     block.style.left = "100px";
-//     block.style.bottom = "50px";
-//     grid.appendChild(block);
-//   }
-
-//   addBlock();
